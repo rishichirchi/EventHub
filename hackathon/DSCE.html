@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>Event Hub
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
-</head>
-<hr>
-
-<body>
-    <div class="dsc1">
-        <h1>
-        Dayananda Sagar College of Engineering
-    </h1>
-    </div>
-    <h2>Events:- </h2>
-    <!-- <h3 id="dateDisplay"> </h2>
-    <script>
-        function formatDate(date) {
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            return `${day}-${month}-${year}`;
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
         }
 
-        const currentDate = new Date();
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
 
-        document.getElementById("dateDisplay").innerText += " " + formatDate(currentDate);
-    </script> -->
-    <style>
-        .dsc1{
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dsc1 {
             margin-left: 400px;
         }
+
         table {
             border-collapse: collapse;
             width: 100%;
+            margin-top: 20px;
         }
 
         th,
@@ -45,23 +46,35 @@
         th {
             background-color: #f2f2f2;
         }
-        
     </style>
-    <table id="myTable">
-        <tr>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Duration</th>
-            <th>Time Left</th>
-            <th>Event Name</th>
-            <th>Description</th>
-        </tr>
-        <tbody id="tbody">
+</head>
 
-        </tbody>
+<body>
+    <header>
+        <h1>Event Hub</h1>
+    </header>
 
+    <div class="container">
+        <div class="dsc1">
+            <h2>Dayananda Sagar College of Engineering</h2>
+        </div>
+        <h3>Events:</h3>
 
-    </table>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Duration</th>
+                    <th>Time Left</th>
+                    <th>Event Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+
     <script>
 
         var data = [
@@ -163,21 +176,6 @@
 
         window.onload = addRows;
     </script>
-
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            data[i].date = localStorage.getItem('formData1');
-            data[i].time = localStorage.getItem('formData2');
-            data[i].duration = localStorage.getItem('formData3');
-            
-            data[i].eventName = localStorage.getItem('formData4');
-            data[i].description = localStorage.getItem('formData5');
-
-            var link = localStorage.getItem('link');
-            var institute = localStorage.getItem('name');
-        });
-        
-    </script> -->
 </body>
 
 </html>
