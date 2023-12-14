@@ -38,12 +38,14 @@ select {
     background: rgb(143, 233, 41); 
     color: #000000;
     box-shadow: 0 0 10px rgba(2, 2, 2, 0.5); 
+    cursor: pointer;
 
 }
 
 .button-container1 {
     margin-left: 1100px;
     margin-top: 300px;
+    cursor: pointer;
 }
 
 .button-container1 .button {
