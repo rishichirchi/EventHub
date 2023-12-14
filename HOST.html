@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        #heading{
+            text-align: center;
+        }
+        form {
+            border: 1px solid #ccc;
+            padding: 30px;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        
+    </style>
+
+    <h2 id = "heading">Event Form</h2>
+
+    <form action="submit_form.php" method="post">
+        <label for="institute">Institute:</label>
+        <!-- <input type="text" name="institute" id="institute" required> -->
+        <select name="institute" id="institute">
+            <option value="default">--Select--</option>
+            <option value="dsce">Dayananda Sagar College of Engineering</option>
+            <option value="rvce">R V College of Engineering</option>
+            <option value="pes">P E S University</option>
+            <option value="bmsce"> B M S College of Engineering</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" name="duration" placeholder="E.g., 2 hours" required>
+
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" name="eventName" required>
+
+        <label for="eventLink">Event Link:</label>
+        <input type="url" id="eventLink" name="eventLink" placeholder="https://example.com" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <button type="submit" onclick="storeData()">Submit</button>
+    </form>
+
+    <script>
+        function storeData() {
+            var data1 = document.getElementById('institute').value;
+            var data2 = document.getElementById('date').value;
+            var data3 = document.getElementById('time').value;
+            var data4 = document.getElementById('duration').value;
+            var data5 = document.getElementById('eventName').value;
+            var data6 = document.getElementById('eventLink').value;
+            var data7 = document.getElementById('description').value;
+
+            localStorage.setItem('name', data1);
+            localStorage.setItem('formData1', data2);
+            localStorage.setItem('formData2', data3);
+            localStorage.setItem('formData3', data4);
+            localStorage.setItem('formData4', data5);
+            localStorage.setItem('link', data6);
+            localStorage.setItem('formData5', data7);
+
+            
+            var dd = localStorage.getItem("data");
+            dd.push({
+                date: "14/12/23", time: "9:30", duration: "8 hours", timeLeft: "0",
+                eventName: "Hackoasis by Bytexnyc", description: "Hackathon"
+            })
+            localStorage.setItem("data", dd);
+
+            window.location.href = 'main_page.html';
+        }
+    </script>
+
+</body>
+</html>
