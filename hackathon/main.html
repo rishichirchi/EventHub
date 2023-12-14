@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>EVENT HUB</h1>
+
+    <form id="calendarForm" method="get">
+        <label for="college">Select a College:</label>
+        <select class="college" name="college" id="collegeSelect">
+            <option value="DSCE">DSCE</option>
+            <option value="RV">RV</option>
+            <option value="BMS">BMS</option>
+        </select>
+
+        <div class="button-container">
+            <button type="button" class="button" onclick="submitForm()">Enter</button>
+        </div>
+    </form>
+
+    <div class="button-container1">
+        <button class="button">Organizer</button>
+    </div>
+
+    <script>
+        function submitForm() {
+            var selectedCollege = document.getElementById("collegeSelect").value;
+
+            
+            switch (selectedCollege) {
+                case "DSCE":
+                    document.getElementById("calendarForm").action = "DSCE.html";
+                    break;
+                case "RV":
+                    document.getElementById("calendarForm").action = "RV.html";
+                    break;
+                case "BMS":
+                    document.getElementById("calendarForm").action = "BMS.html";
+                    break;
+                default:
+                    
+                    break;
+            }
+
+           
+            document.getElementById("calendarForm").submit();
+        }
+    </script>
+
+</body>
+</html>
