@@ -105,7 +105,77 @@
 
     <script>
         function storeData() {
+<<<<<<< Updated upstream:hackathon/HOST.html
             // Your existing JavaScript code
+=======
+            var data1 = document.getElementById('institute').value;
+            var data2 = document.getElementById('date').value;
+            var data3 = document.getElementById('time').value;
+            var data4 = document.getElementById('duration').value;
+            var data5 = document.getElementById('eventName').value;
+            var data6 = document.getElementById('eventLink').value;
+            var data7 = document.getElementById('description').value;
+
+            localStorage.setItem('name', data1);
+            localStorage.setItem('formData1', data2);
+            localStorage.setItem('formData2', data3);
+            localStorage.setItem('formData3', data4);
+            localStorage.setItem('formData4', data5);
+            localStorage.setItem('link', data6);
+            localStorage.setItem('formData5', data7);
+
+            
+            var dd = localStorage.getItem("data");
+            dd.push({
+                date: "14/12/23", time: "9:30", duration: "8 hours", timeLeft: "0",
+                eventName: "Hackoasis by Bytexnyc", description: "Hackathon"
+            })
+            localStorage.setItem("data", dd);
+
+            window.location.href = 'main_page.html';
+
+
+            
+        }
+    </script>
+    <script>
+        function storeData(storedData3a) {
+            // Your existing code to store form data
+            // ...
+
+            // Add code for the countdown timer
+            var durationInput = document.getElementById('duration');
+            var durationValue = durationInput.value;
+            var durationArray = durationValue.split(' '); // assuming '2 hours' format
+
+            var hours = parseInt(durationArray[0], 10);
+            var minutes = 0;
+
+            if (durationArray.length > 1) {
+                minutes = parseInt(durationArray[1], 10);
+            }
+
+            var totalMinutes = hours * 60 + minutes;
+            var currentTime = totalMinutes;
+
+            var timeLeftSpan = document.getElementById('timeLeft');
+
+            var countdown = setInterval(function () {
+                var hoursLeft = Math.floor(currentTime / 60);
+                var minutesLeft = currentTime % 60;
+
+                timeLeftSpan.textContent = hoursLeft + ':' + (minutesLeft < 10 ? '0' : '') + minutesLeft;
+
+                if (currentTime <= 0) {
+                    clearInterval(countdown);
+                    // Optionally, you can perform an action when the time is up.
+                    // For example, you can submit the form automatically.
+                    // document.forms[0].submit();
+                } else {
+                    currentTime--;
+                }
+            }, 60000); // update every minute
+>>>>>>> Stashed changes:HOST.html
         }
     </script>
 </body>
